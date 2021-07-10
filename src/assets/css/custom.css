@@ -1,0 +1,50 @@
+*:focus, *:active {
+  outline: 0 !important;
+  border: unset !important;
+}
+*:not(input):focus{
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+.bold{
+  font-weight: bold;
+}
+.lh-1{
+  line-height: 1;
+}
+.navbar-toggler{
+  border: 0;
+  font-size: 13pt;
+}
+.navbar-toggler-icon{
+  color: #fff;
+  filter: invert(1);
+}
+.navbar a{
+  padding: 0 1rem;
+}
+.radius-10{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card, .card:focus{
+  border: 1px solid whiteSmoke !important;
+}
+.card:hover{
+  -webkit-box-shadow: unset !important;
+  box-shadow: unset !important;
+}
+.truncate-2 {
+  -webkit-line-clamp: 2;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.form-control, .form-control:focus{
+  border: 1px solid whiteSmoke !important;
+}

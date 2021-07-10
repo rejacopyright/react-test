@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, Fragment, useMemo } from 'react';
+import {Switch, Route} from 'react-router-dom'
+import routes from 'config/routes'
+import Nav from 'components/nav'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'assets/css/custom.css'
+import { Container } from 'reactstrap'
 
-function App() {
+function Index(){
+  useMemo(() => {
+    document.title = 'Home'
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Nav />
+      <Container className="themed-container py-2" fluid="lg">
+        <div className="mb-5" />
+        <div className="px-md-3">
+          <Suspense fallback="">
+            <Switch>
+              { routes.map((r, key) => <Route  key={key} {...r} />) }
+            </Switch>
+          </Suspense>
+        </div>
+      </Container>
+    </Fragment>
   );
 }
 
-export default App;
+export default Index;
