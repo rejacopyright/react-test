@@ -1,0 +1,20 @@
+name: NGATES WE
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: install # run `yarn install`
+    - uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: build # run `yarn build`
+    - uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: test # run `yarn test`
